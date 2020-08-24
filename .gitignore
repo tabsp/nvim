@@ -1,0 +1,9 @@
+.DS_Store
+plugged/
+autoload/
+undodir/
+pack/
+.netrwhist
+
+.XTablineBookmarks
+.XTablineSessions
