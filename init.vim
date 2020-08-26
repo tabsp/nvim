@@ -326,8 +326,8 @@ highlight GitGutterChangeDelete ctermfg=4
 let g:xtabline_settings = {}
 let g:xtabline_settings.tabline_modes = ['buffers', 'tabs']
 let g:xtabline_settings.theme = 'dracula'
-noremap <LEADER>] :XTabNextBuffer<CR>
-noremap <LEADER>[ :XTabPrevBuffer<CR>
+noremap <LEADER>- :XTabNextBuffer<CR>
+noremap <LEADER>= :XTabPrevBuffer<CR>
 noremap <LEADER>q :XTabCloseBuffer<CR>
 noremap tl :XTabMoveBufferNext<CR>
 noremap th :XTabMoveBufferPrev<CR>
