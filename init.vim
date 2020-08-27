@@ -28,7 +28,6 @@ set showcmd
 " 命令补全
 set wildmenu
 set encoding=UTF-8
-set guifont=Hack\ Nerd\ Font:h16
 " 自动切换工作目录
 set autochdir
 " 行号样式
@@ -80,9 +79,8 @@ set shiftwidth=4
 set expandtab
 " 回车后自动缩进
 set autoindent
-" set list
-" set listchars=tab:>-,trail:-
-set list listchars=extends:❯,precedes:❮,tab:▸\ ,trail:˽
+set list
+set list listchars=extends:❯,precedes:❮,tab:▸\ ,trail:▫
 
 " ====================
 " ==== 快捷键配置 ====
@@ -172,7 +170,6 @@ Plug 'dhruvasagar/vim-table-mode'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
-Plug 'Chiel92/vim-autoformat'
 
 " 自动配对
 Plug 'jiangmiao/auto-pairs'
@@ -188,8 +185,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'uguu-org/vim-matrix-screensaver'
 
 " theme
-Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'joshdick/onedark.vim'
+" Plug 'sheerun/vim-polyglot'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " 启动页面
 Plug 'mhinz/vim-startify'
@@ -213,7 +211,6 @@ call plug#end()
 
 """
 """ airline
-"""
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -311,7 +308,7 @@ inoreabbrev <expr> __
 """ GitGutter
 """
 " 显示行号
-set signcolumn=yes
+" set signcolumn=yes
 " Colors
 let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn
@@ -319,6 +316,12 @@ highlight GitGutterAdd ctermfg=2
 highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
 highlight GitGutterChangeDelete ctermfg=4
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '--'
+let g:gitgutter_sign_modified_removed = '~-'
 
 """
 """ xtabline
@@ -333,13 +336,8 @@ noremap tl :XTabMoveBufferNext<CR>
 noremap th :XTabMoveBufferPrev<CR>
 noremap tp :XTabPinBuffer<CR>
 
-"""
-""" autoformat
-"""
-" au BufWrite *.go :Autoformat
-
 " 主题配置
-colorscheme onedark
+colorscheme dracula
 
 """
 """ tagbar
