@@ -185,8 +185,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'uguu-org/vim-matrix-screensaver'
 
 " theme
-" Plug 'joshdick/onedark.vim'
-" Plug 'sheerun/vim-polyglot'
+Plug 'rakr/vim-one', { 'as': 'one' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " 启动页面
@@ -208,6 +207,11 @@ Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 
 call plug#end()
+
+" 主题配置
+colorscheme dracula
+" True color
+set termguicolors
 
 """
 """ airline
@@ -335,9 +339,6 @@ noremap <LEADER>q :XTabCloseBuffer<CR>
 noremap tl :XTabMoveBufferNext<CR>
 noremap th :XTabMoveBufferPrev<CR>
 noremap tp :XTabPinBuffer<CR>
-
-" 主题配置
-colorscheme dracula
 
 """
 """ tagbar
