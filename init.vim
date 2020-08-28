@@ -76,15 +76,26 @@ set softtabstop=4
 " 每层缩进的空格数
 set shiftwidth=4
 " 自动展开 tab
-set expandtab
+set noexpandtab
 " 回车后自动缩进
 set autoindent
+" 显示 tab 和 space
 set list
 set list listchars=extends:❯,precedes:❮,tab:▸\ ,trail:▫
 
 " ====================
 " ==== 快捷键配置 ====
 " ====================
+
+" 禁用方向键
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " 将 <Space> 设置为 <LEADER>
 let mapleader=" "
@@ -95,6 +106,9 @@ noremap <LEADER><CR> :nohlsearch<CR>
 " 重新加载配置文件
 noremap R :source $MYVIMRC<CR>
 
+" jj 映射为 ESC
+inoremap jj <ESC>
+
 """
 """ buffer 操作
 """
@@ -102,6 +116,7 @@ noremap R :source $MYVIMRC<CR>
 noremap S :w<CR>
 " 关闭文件
 noremap Q :q<CR>
+" 删除当前 buffer
 noremap <C-d> :bdelete<CR>
 
 """
@@ -111,9 +126,10 @@ noremap J 5j
 noremap K 5k
 noremap H 0
 noremap L $
-inoremap <C-A> <ESC>I
 noremap W 5w
 noremap B 5b
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
 
 """
 """ 分屏操作
@@ -311,8 +327,6 @@ inoreabbrev <expr> __
 """
 """ GitGutter
 """
-" 显示行号
-" set signcolumn=yes
 " Colors
 let g:gitgutter_override_sign_column_highlight = 0
 highlight clear SignColumn
@@ -333,8 +347,8 @@ let g:gitgutter_sign_modified_removed = '~-'
 let g:xtabline_settings = {}
 let g:xtabline_settings.tabline_modes = ['buffers', 'tabs']
 let g:xtabline_settings.theme = 'dracula'
-noremap <LEADER>- :XTabNextBuffer<CR>
-noremap <LEADER>= :XTabPrevBuffer<CR>
+noremap <LEADER>= :XTabNextBuffer<CR>
+noremap <LEADER>- :XTabPrevBuffer<CR>
 noremap <LEADER>q :XTabCloseBuffer<CR>
 noremap tl :XTabMoveBufferNext<CR>
 noremap th :XTabMoveBufferPrev<CR>
