@@ -105,6 +105,9 @@ map <LEADER>rc :e $MYVIMRC<CR>
 noremap <LEADER><CR> :nohlsearch<CR>
 " 重新加载配置文件
 noremap R :source $MYVIMRC<CR>
+" 选中多行时缩进后不失去选择
+xnoremap < <gv
+xnoremap > >gv
 
 " jj 映射为 ESC
 inoremap jj <ESC>
@@ -386,3 +389,4 @@ let g:tagbar_type_go = {
             \ }
 let g:tagbar_width=50
 nnoremap <silent> <C-t> :TagbarToggle<CR>
+
