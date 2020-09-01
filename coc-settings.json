@@ -1,49 +1,49 @@
 {
-    "coc.preferences.extensionUpdateCheck": "daily",
-    "suggest.noselect": true,
-    "suggest.enablePreselect": false,
-    "codeLens.enable": true,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "cuda",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls-root",
-                "compile_commands.json"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": ".ccls-cache"
-                },
-                "client": {
-                    "snippetSupport": true
-                }
-            }
-        }
-    },
-    // format
-    "coc.preferences.formatOnSaveFiletypes": [
-        "json"
-    ],
-    // explorer
-    "explorer.file.showHiddenFiles": true,
-    "explorer.width": 60,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.keyMappings": {
-        "<cr>": [
-            "expandable?",
-            "expand",
-            "open"
-        ],
-        "v": "open:vsplit"
-    },
-    // java
-    "java.home": "~/Workspace/Java/jdk-11.0.8.jdk/Contents/Home"
+	"coc.preferences.extensionUpdateCheck": "daily",
+	"suggest.noselect": true,
+	"suggest.enablePreselect": false,
+	"codeLens.enable": true,
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cpp",
+				"cuda",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls-root",
+				"compile_commands.json"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": ".ccls-cache"
+				},
+				"client": {
+					"snippetSupport": true
+				}
+			}
+		}
+	},
+	// format
+	"coc.preferences.formatOnSaveFiletypes": [
+		"json"
+	],
+	// explorer
+	"explorer.file.showHiddenFiles": true,
+	"explorer.width": 30,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.previewAction.onHover": false,
+	"explorer.keyMappings": {
+		"<cr>": [
+			"expandable?",
+			"expand",
+			"open"
+		],
+		"v": "open:vsplit"
+	},
+	// java
+	"java.home": "~/Workspace/Java/jdk-11.0.8.jdk/Contents/Home"
 }
