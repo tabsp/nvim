@@ -204,7 +204,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'uguu-org/vim-matrix-screensaver'
 
 " theme
-Plug 'rakr/vim-one', { 'as': 'one' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " 启动页面
@@ -258,8 +257,7 @@ map -- <Plug>NERDCommenterToggle
 """
 """ fzf
 """
-map <C-f> :Files<CR>
-map <C-o> :GFiles<CR>
+map <C-f> :GFiles<CR>
 map <C-b> :Buffers<CR>
 " 让输入上方，搜索列表在下方
 let $FZF_DEFAULT_OPTS = '--layout=reverse'
