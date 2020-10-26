@@ -29,6 +29,11 @@ function options:loadEditorDefine()
     undodir = global.cacheDir .. "undo/",
     termguicolors = true,
     listchars = "tab:»·,nbsp:+,trail:▫,extends:❯,precedes:❮",
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = false,
+    autoindent = true,
   }
 end
 

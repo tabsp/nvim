@@ -21,7 +21,7 @@ function dein:parseConfig()
   local p = io.popen('find "'..global.modulesDir..'" -name "*.yaml"')
   for file in p:lines() do
     table.insert(self.configFiles,vim.inspect(file))
-    local cfg = vim.api.nvim_eval(vim.fn.system(cmd,global.readAll(file)))
+    local cfg = vim.api.nvim_eval(vim.fn.system(cmd, global.readAll(file)))
     for _,v in pairs(cfg) do
       table.insert(self.repos,v)
     end

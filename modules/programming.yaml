@@ -1,0 +1,23 @@
+- repo: Yggdroot/indentLine
+  hook_add: |
+    let g:indentLine_enabled = 1
+    let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+    let g:indentLine_concealcursor = 'niv'
+    let g:indentLine_showFirstIndentLevel = 1
+
+- repo: neovim/nvim-lspconfig
+  hook_source: |
+    lua << EOF
+      nvim_lsp = require "nvim_lsp"
+      nvim_lsp.gopls.setup{
+        cmd = {"gopls", "serve"},
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+          },
+        },
+      }
+    EOF
