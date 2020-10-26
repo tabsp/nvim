@@ -1,6 +1,7 @@
 local global = require 'global'
 local vim = vim
 local options = {}
+local M = {}
 
 function options:new()
   local instance = {}
@@ -9,22 +10,49 @@ function options:new()
   return instance
 end
 
-function options:loadOptions()
-  -- editor options
-  vim.o.clipboard = 'unnamed,unnamedplus'
-  vim.o.encoding = 'utf-8'
-  vim.o.ignorecase = true
-  vim.o.smartcase = true
-  vim.o.swapfile = false
-  vim.o.undofile = true
-  vim .o.undodir = global.cacheDir .. "undo/"
-
-  -- window-scoped local-options
-  vim.wo.number = true
-  vim.wo.relativenumber = true
-  vim.wo.cursorline = true
-
-  -- buffer-scoped local-options
+function M.nvimLoadOptions(options)
+  for k, v in pairs(options) do
+    for key,value in pairs(v) do
+      vim[k][key] = value
+    end
+  end
+end
+-- editor options
+function options:loadEditorDefine()
+  self.o = {
+    clipboard = 'unnamed,unnamedplus',
+    encoding = 'utf-8',
+    ignorecase = true,
+    smartcase = true,
+    swapfile = false,
+    undofile = true,
+    undodir = global.cacheDir .. "undo/",
+    termguicolors = true,
+    listchars = "tab:»·,nbsp:+,trail:▫,extends:❯,precedes:❮",
+  }
 end
 
-return options
+-- window-scoped local-options
+function options:loadWindowDefine()
+  self.wo = {
+    number = true,
+    relativenumber = true,
+    cursorline = true,
+    list = true,
+  }
+end
+
+-- buffer-scoped local-options
+function options:loadBufferDefine()
+  self.bo = {}
+end
+
+function M.loadOptions()
+  local opts = options:new()
+  opts:loadEditorDefine()
+  opts:loadWindowDefine()
+  opts:loadBufferDefine()
+  M.nvimLoadOptions(opts)
+end
+
+return M

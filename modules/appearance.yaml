@@ -1,23 +1,12 @@
-- repo: kyazdani42/nvim-web-devicons
+- repo: joshdick/onedark.vim
+  name: onedark
 
-- repo: Akin909/nvim-bufferline.lua
-  depends: nvim-web-devicons
-  hook_add: |
-    lua << EOF
-    require'bufferline'.setup{
-        options = {
-          modified_icon = '?',
-          buffer_close_icon = '',
-          mappings = true,
-          always_show_bufferline = false,
-        };
-        highlights = {
-          bufferline_selected = {
-            gui = "bold",
-          };
-        };
-      }
-    EOF
+- repo: itchyny/lightline.vim
+
+- repo: romgrk/lib.kom
+- repo: romgrk/barbar.nvim
+
+- repo: kyazdani42/nvim-web-devicons
 
 - repo: kyazdani42/nvim-tree.lua
   on_cmd: [LuaTreeToggle, LuaTreeOpen]
@@ -40,3 +29,9 @@
       \   'untracked': "★"
       \   },
     \ }
+
+- repo: norcalli/nvim-colorizer.lua
+  hook_source: |
+    lua << EOF
+      require 'colorizer'.setup()
+    EOF

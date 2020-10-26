@@ -13,38 +13,44 @@ end
 function mapping:loadVimDefine()
   vim.g.mapleader = " "
   self.vim= {
-    ['|<LEADER>rc'] = mapCu('e $MYVIMRC'):withNoremap(),
-    ['|R'] = mapCu('source $MYVIMRC'):withNoremap(),
-    ['|<LEADER><CR>'] = mapCr('nohls'):withNoremap(),
+    ['n|<LEADER>rc'] = mapCu('e $MYVIMRC'):withNoremap(),
+    ['n|R'] = mapCu('source $MYVIMRC'):withNoremap(),
+    ['n|<LEADER><CR>'] = mapCr('nohls'):withNoremap(),
     ['i|jj'] = mapCmd('<ESC>'):withNoremap(),
     -- buffer
-    ['|S'] = mapCu('write'):withNoremap(),
-    ['|Q'] = mapCu('quit'):withNoremap(),
-    ['|<C-d>'] = mapCu('bdelete'):withNoremap(),
+    ['n|S'] = mapCu('write'):withNoremap(),
+    ['n|Q'] = mapCu('quit'):withNoremap(),
+    ['n|<C-d>'] = mapCu('bdelete'):withNoremap(),
+    ['n|<LEADER>='] = mapCu('bnext'):withNoremap(),
+    ['n|<LEADER>-'] = mapCu('bprevious'):withNoremap(),
     -- cursor
-    ['|J'] = mapCmd('5j'):withNoremap(),
-    ['|K'] = mapCmd('5k'):withNoremap(),
-    ['|H'] = mapCmd('0'):withNoremap(),
-    ['|L'] = mapCmd('$'):withNoremap(),
-    ['|W'] = mapCmd('5w'):withNoremap(),
-    ['|B'] = mapCmd('5b'):withNoremap(),
+    ['n|J'] = mapCmd('5j'):withNoremap(),
+    ['n|K'] = mapCmd('5k'):withNoremap(),
+    ['n|H'] = mapCmd('0'):withNoremap(),
+    ['n|L'] = mapCmd('$'):withNoremap(),
+    ['n|W'] = mapCmd('5w'):withNoremap(),
+    ['n|B'] = mapCmd('5b'):withNoremap(),
     ['i|<C-a>'] = mapCmd('<ESC>I'):withNoremap(),
     ['i|<C-e>'] = mapCmd('<ESC>A'):withNoremap(),
     -- split window
-    ['|sk'] = mapCr('set nosplitbelow<CR>:split'):withNoremap(),
-    ['|sj'] = mapCr('set splitbelow<CR>:split'):withNoremap(),
-    ['|sh'] = mapCr('set nosplitright<CR>:vsplit'):withNoremap(),
-    ['|sl'] = mapCr('set splitright<CR>:vsplit'):withNoremap(),
-    ['|<C-k>'] = mapCmd('<C-w>k'):withNoremap(),
-    ['|<C-j>'] = mapCmd('<C-w>j'):withNoremap(),
-    ['|<C-h>'] = mapCmd('<C-w>h'):withNoremap(),
-    ['|<C-l>'] = mapCmd('<C-w>l'):withNoremap(),
+    ['n|sk'] = mapCr('set nosplitbelow<CR>:split'):withNoremap(),
+    ['n|sj'] = mapCr('set splitbelow<CR>:split'):withNoremap(),
+    ['n|sh'] = mapCr('set nosplitright<CR>:vsplit'):withNoremap(),
+    ['n|sl'] = mapCr('set splitright<CR>:vsplit'):withNoremap(),
+    ['n|<C-k>'] = mapCmd('<C-w>k'):withNoremap(),
+    ['n|<C-j>'] = mapCmd('<C-w>j'):withNoremap(),
+    ['n|<C-h>'] = mapCmd('<C-w>h'):withNoremap(),
+    ['n|<C-l>'] = mapCmd('<C-w>l'):withNoremap(),
+    -- Press space twice to jump to the next '<++>' and edit it
+    ['n|<LEADER><LEADER>'] = mapCr('<ESC>/<++><CR>:nohlsearch'):withNoremap(),
   }
 end
 
 function mapping:loadPluginDefine()
   self.plugin = {
     ["n|tt"] = mapCu('LuaTreeToggle'):withNoremap():withSilent(),
+    ["n|bp"] = mapCu('BufferPick'):withNoremap():withSilent(),
+    ["n|<Leader>pr"] = mapCr("call dein#recache_runtimepath()"):withNoremap():withSilent(),
   }
 end
 
