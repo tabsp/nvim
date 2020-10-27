@@ -5,19 +5,41 @@
     let g:indentLine_concealcursor = 'niv'
     let g:indentLine_showFirstIndentLevel = 1
 
-- repo: neovim/nvim-lspconfig
+- repo: nvim-lua/completion-nvim
+  on_event: [BufEnter]
+  hook_add: |
+    let g:completion_enable_auto_hover = 0
+    let g:completion_auto_change_source = 1
+    let g:completion_matching_smart_case = 1
+    let g:completion_enable_snippet = 'vim-vsnip'
+    let g:completion_trigger_keyword_length = 3
+    let g:completion_chain_complete_list = [
+        \  {'complete_items': ['lsp']},
+        \  {'complete_items': ['snippet']},
+        \  {'complete_items': ['buffers']},
+        \  {'complete_items': ['path']},
+        \  {'mode': '<c-p>'},
+        \  {'mode': '<c-n>'}
+      \]
   hook_source: |
+    autocmd BufEnter * lua require'completion'.on_attach()
+
+- repo: neovim/nvim-lspconfig
+  hook_add: |
     lua << EOF
       nvim_lsp = require "nvim_lsp"
-      nvim_lsp.gopls.setup{
-        cmd = {"gopls", "serve"},
-        settings = {
-          gopls = {
-            analyses = {
-              unusedparams = true,
-            },
-            staticcheck = true,
-          },
-        },
-      }
+      nvim_lsp.gopls.setup{}
     EOF
+
+- repo: steelsojka/completion-buffers
+  on_source: completion-nvim
+
+- repo: hrsh7th/vim-vsnip
+  on_event: InsertCharPre
+  hook_source: |
+    let g:vsnip_snippet_dir = getenv("HOME") . "/.config/nvim/snippets"
+
+- repo: hrsh7th/vim-vsnip-integ
+  on_event: InsertCharPre
+
+- repo: jiangmiao/auto-pairs
