@@ -49,7 +49,12 @@ end
 
 -- buffer-scoped local-options
 function options:loadBufferDefine()
-  self.bo = {}
+  self.bo = {
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = false,
+  }
 end
 
 function M.loadOptions()

@@ -32,6 +32,11 @@ function mapping:loadVimDefine()
     ['n|B'] = mapCmd('5b'):withNoremap(),
     ['i|<C-a>'] = mapCmd('<ESC>I'):withNoremap(),
     ['i|<C-e>'] = mapCmd('<ESC>A'):withNoremap(),
+    ['c|<C-b>'] = mapCmd('<Left>'):withNoremap(),
+    ['c|<C-f>'] = mapCmd('<Right>'):withNoremap(),
+    ['c|<C-a>'] = mapCmd('<Home>'):withNoremap(),
+    ['c|<C-e>'] = mapCmd('<End>'):withNoremap(),
+    ['c|<C-d>'] = mapCmd('<Del>'):withNoremap(),
     -- split window
     ['n|sk'] = mapCr('set nosplitbelow<CR>:split'):withNoremap(),
     ['n|sj'] = mapCr('set splitbelow<CR>:split'):withNoremap(),

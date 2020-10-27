@@ -43,3 +43,19 @@
   on_event: InsertCharPre
 
 - repo: jiangmiao/auto-pairs
+
+- repo: mhartington/formatter.nvim
+  hook_add: |
+    lua << EOF
+      require('format').setup{
+        lua = {
+          luafmt = function()
+            return {
+              exe = "luafmt",
+              args = {"--indent-count", 2, "--stdin"},
+              stdin = true
+            }
+          end
+        }
+      }
+    EOF
