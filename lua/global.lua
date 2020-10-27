@@ -1,23 +1,23 @@
 local global = {}
 local home = os.getenv("HOME")
-local pathSep = global.isWindows and '\\' or '/'
+local pathSep = global.isWindows and "\\" or "/"
 
 function global.loadVariables()
-  global.isMac = jit.os == 'OSX'
-  global.isLinux = jit.os == 'Linux'
-  global.isWindows = jit.os == 'Windows'
-  global.vimPath = home .. pathSep..'.config'..pathSep..'nvim'
-  global.cacheDir = home .. pathSep..'.cache'..pathSep..'vim'..pathSep
-  global.modulesDir = global.vimPath .. pathSep..'modules'
+  global.isMac = jit.os == "OSX"
+  global.isLinux = jit.os == "Linux"
+  global.isWindows = jit.os == "Windows"
+  global.vimPath = home .. pathSep .. ".config" .. pathSep .. "nvim"
+  global.cacheDir = home .. pathSep .. ".cache" .. pathSep .. "vim" .. pathSep
+  global.modulesDir = global.vimPath .. pathSep .. "modules"
   global.pathSep = pathSep
   global.home = home
 end
 
 function global.readAll(file)
-    local f = assert(io.open(file, "rb"))
-    local content = f:read("*all")
-    f:close()
-    return content
+  local f = assert(io.open(file, "rb"))
+  local content = f:read("*all")
+  f:close()
+  return content
 end
 
 function global.exists(file)
@@ -33,7 +33,7 @@ end
 
 function global.isDir(path)
   -- "/" works on both Unix and Windows
-  return global.exists(path.."/")
+  return global.exists(path .. "/")
 end
 
 global.loadVariables()

@@ -1,18 +1,18 @@
-local global = require 'global'
+local global = require "global"
 local vim = vim
 local options = {}
 local M = {}
 
 function options:new()
   local instance = {}
-  setmetatable(instance,self)
+  setmetatable(instance, self)
   self.__index = self
   return instance
 end
 
 function M.nvimLoadOptions(options)
   for k, v in pairs(options) do
-    for key,value in pairs(v) do
+    for key, value in pairs(v) do
       vim[k][key] = value
     end
   end
@@ -20,8 +20,8 @@ end
 -- editor options
 function options:loadEditorDefine()
   self.o = {
-    clipboard = 'unnamed,unnamedplus',
-    encoding = 'utf-8',
+    clipboard = "unnamed,unnamedplus",
+    encoding = "utf-8",
     ignorecase = true,
     smartcase = true,
     swapfile = false,
@@ -33,7 +33,7 @@ function options:loadEditorDefine()
     softtabstop = 4,
     shiftwidth = 4,
     expandtab = false,
-    autoindent = true,
+    autoindent = true
   }
 end
 
@@ -43,7 +43,7 @@ function options:loadWindowDefine()
     number = true,
     relativenumber = true,
     cursorline = true,
-    list = true,
+    list = true
   }
 end
 
@@ -53,7 +53,7 @@ function options:loadBufferDefine()
     tabstop = 4,
     softtabstop = 4,
     shiftwidth = 4,
-    expandtab = false,
+    expandtab = false
   }
 end
 
