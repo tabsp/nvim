@@ -33,7 +33,9 @@ function options:loadEditorDefine()
     softtabstop = 4,
     shiftwidth = 4,
     expandtab = false,
-    autoindent = true
+    autoindent = true,
+    completeopt = "menuone,noinsert,noselect",
+    shortmess = "aoOTIcF"
   }
 end
 
