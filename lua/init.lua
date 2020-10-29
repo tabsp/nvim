@@ -27,6 +27,8 @@ function M.loadInit()
   d:loadRepos()
   -- set theme
   vim.api.nvim_command("colorscheme onedark")
+  -- statusline
+  require "statusline"
 end
 
 M.loadInit()

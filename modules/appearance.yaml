@@ -1,8 +1,6 @@
 - repo: joshdick/onedark.vim
   name: onedark
 
-- repo: itchyny/lightline.vim
-
 - repo: romgrk/lib.kom
 - repo: romgrk/barbar.nvim
 
@@ -49,3 +47,5 @@
     lua << EOF
       require 'colorizer'.setup()
     EOF
+
+- repo: glepnir/galaxyline.nvim
