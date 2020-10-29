@@ -47,7 +47,8 @@ function mapping:loadVimDefine()
     ["n|<C-h>"] = mapCmd("<C-w>h"):withNoremap(),
     ["n|<C-l>"] = mapCmd("<C-w>l"):withNoremap(),
     -- Press space twice to jump to the next '<++>' and edit it
-    ["n|<LEADER><LEADER>"] = mapCr("<ESC>/<++><CR>:nohlsearch"):withNoremap()
+    ["n|<LEADER><LEADER>"] = mapCr("<ESC>/<++><CR>:nohlsearch"):withNoremap(),
+    ["i|<C-k>"] = mapCmd("<ESC>ld$a"):withNoremap()
   }
 end
 
@@ -57,7 +58,12 @@ function mapping:loadPluginDefine()
     ["n|bp"] = mapCu("BufferPick"):withNoremap():withSilent(),
     ["n|<Leader>pr"] = mapCr("call dein#recache_runtimepath()"):withNoremap():withSilent(),
     ["i|<TAB>"] = mapCmd([[pumvisible() ? '<C-n>' : '<Tab>']]):withExpr():withSilent(),
-    ["i|<S-TAB>"] = mapCmd([[pumvisible() ? '<C-p>' : '<S-Tab>']]):withNoremap():withExpr()
+    ["i|<S-TAB>"] = mapCmd([[pumvisible() ? '<C-p>' : '<S-Tab>']]):withNoremap():withExpr(),
+    -- neovim lsp
+    ["n|gd"] = mapCmd("<cmd>lua vim.lsp.buf.definition()<CR>"):withNoremap():withSilent(),
+    ["n|gi"] = mapCmd("<cmd>lua vim.lsp.buf.implementation()<CR>"):withNoremap():withSilent(),
+    ["n|gr"] = mapCmd("<cmd>lua vim.lsp.buf.references()<CR>"):withNoremap():withSilent(),
+    ["n|gh"] = mapCmd("<cmd>lua vim.lsp.buf.hover()<CR>"):withNoremap():withSilent()
   }
 end
 
