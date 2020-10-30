@@ -66,6 +66,7 @@ gls.left[2] = {
     highlight = {colors.darkblue, colors.linebg, "bold"}
   }
 }
+
 gls.left[3] = {
   FileIcon = {
     provider = "FileIcon",
@@ -73,11 +74,16 @@ gls.left[3] = {
     highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.linebg}
   }
 }
+
 gls.left[4] = {
   FileName = {
-    provider = {"FileName", "FileSize"},
+    provider = {"FileName"},
     condition = bufferNotEmpty,
-    highlight = {colors.fg, colors.linebg, "bold"}
+    highlight = {
+      colors.red,
+      colors.linebg,
+      "bold"
+    }
   }
 }
 
@@ -96,6 +102,7 @@ gls.left[5] = {
     highlight = {colors.orange, colors.linebg}
   }
 }
+
 gls.left[6] = {
   GitBranch = {
     provider = "GitBranch",
@@ -116,26 +123,29 @@ gls.left[7] = {
   DiffAdd = {
     provider = "DiffAdd",
     condition = checkWidth,
-    icon = " ",
+    icon = "+",
     highlight = {colors.green, colors.linebg}
   }
 }
+
 gls.left[8] = {
   DiffModified = {
     provider = "DiffModified",
     condition = checkWidth,
-    icon = " ",
+    icon = "~",
     highlight = {colors.orange, colors.linebg}
   }
 }
+
 gls.left[9] = {
   DiffRemove = {
     provider = "DiffRemove",
     condition = checkWidth,
-    icon = " ",
+    icon = "-",
     highlight = {colors.red, colors.linebg}
   }
 }
+
 gls.left[10] = {
   LeftEnd = {
     provider = function()
@@ -146,6 +156,7 @@ gls.left[10] = {
     highlight = {colors.linebg, colors.linebg}
   }
 }
+
 gls.left[11] = {
   DiagnosticError = {
     provider = "DiagnosticError",
@@ -153,6 +164,7 @@ gls.left[11] = {
     highlight = {colors.red, colors.bg}
   }
 }
+
 gls.left[12] = {
   Space = {
     provider = function()
@@ -160,6 +172,7 @@ gls.left[12] = {
     end
   }
 }
+
 gls.left[13] = {
   DiagnosticWarn = {
     provider = "DiagnosticWarn",
@@ -167,6 +180,7 @@ gls.left[13] = {
     highlight = {colors.blue, colors.bg}
   }
 }
+
 gls.right[1] = {
   FileFormat = {
     provider = "FileFormat",
@@ -175,7 +189,17 @@ gls.right[1] = {
     highlight = {colors.fg, colors.linebg}
   }
 }
+
 gls.right[2] = {
+  FileEncode = {
+    provider = {"FileEncode"},
+    separator = " |",
+    separator_highlight = {colors.blue, colors.linebg},
+    highlight = {colors.fg, colors.linebg, "bold"}
+  }
+}
+
+gls.right[3] = {
   LineInfo = {
     provider = "LineColumn",
     separator = " | ",
@@ -183,7 +207,8 @@ gls.right[2] = {
     highlight = {colors.fg, colors.linebg}
   }
 }
-gls.right[3] = {
+
+gls.right[4] = {
   PerCent = {
     provider = "LinePercent",
     separator = " ",
@@ -191,7 +216,8 @@ gls.right[3] = {
     highlight = {colors.fg, colors.darkblue}
   }
 }
-gls.right[4] = {
+
+gls.right[5] = {
   ScrollBar = {
     provider = "ScrollBar",
     highlight = {colors.blue, colors.purple}

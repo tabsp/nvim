@@ -26,7 +26,7 @@ function mapping:loadVimDefine()
     -- cursor
     ["n|J"] = mapCmd("5j"):withNoremap(),
     ["n|K"] = mapCmd("5k"):withNoremap(),
-    ["n|H"] = mapCmd("0"):withNoremap(),
+    ["n|H"] = mapCmd("^"):withNoremap(),
     ["n|L"] = mapCmd("$"):withNoremap(),
     ["n|W"] = mapCmd("5w"):withNoremap(),
     ["n|B"] = mapCmd("5b"):withNoremap(),
@@ -63,7 +63,10 @@ function mapping:loadPluginDefine()
     ["n|gd"] = mapCmd("<cmd>lua vim.lsp.buf.definition()<CR>"):withNoremap():withSilent(),
     ["n|gi"] = mapCmd("<cmd>lua vim.lsp.buf.implementation()<CR>"):withNoremap():withSilent(),
     ["n|gr"] = mapCmd("<cmd>lua vim.lsp.buf.references()<CR>"):withNoremap():withSilent(),
-    ["n|gh"] = mapCmd("<cmd>lua vim.lsp.buf.hover()<CR>"):withNoremap():withSilent()
+    ["n|gh"] = mapCmd("<cmd>lua vim.lsp.buf.hover()<CR>"):withNoremap():withSilent(),
+    -- accelerated-jk
+    ["n|j"] = mapCmd('<Plug>(accelerated_jk_gj)'):withSilent(),
+    ["n|k"] = mapCmd('<Plug>(accelerated_jk_gk)'):withSilent(),
   }
 end
 

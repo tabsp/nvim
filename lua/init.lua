@@ -2,6 +2,7 @@ local global = require "global"
 local options = require "options"
 local mapping = require "mapping"
 local dein = require "dein"
+local autocmd = require "autocmd"
 local vim = vim
 local M = {}
 
@@ -25,6 +26,7 @@ function M.loadInit()
   mapping.loadMapping()
   local d = dein:new()
   d:loadRepos()
+  autocmd.loadAutocmds()
   -- set theme
   vim.api.nvim_command("colorscheme onedark")
   -- statusline
