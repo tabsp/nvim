@@ -1,10 +1,23 @@
 - repo: joshdick/onedark.vim
   name: onedark
 
-- repo: romgrk/lib.kom
-- repo: romgrk/barbar.nvim
-
 - repo: kyazdani42/nvim-web-devicons
+
+- repo: akinsho/nvim-bufferline.lua
+  hook_add: |
+    lua << EOF
+      require'bufferline'.setup{
+        options = {
+          modified_icon = '●',
+          buffer_close_icon = '',
+          left_trunc_marker = '',
+          right_trunc_marker = '',
+          separator_style = 'thin',
+          mappings = true,
+          always_show_bufferline = true
+        }
+      }
+    EOF
 
 - repo: kyazdani42/nvim-tree.lua
   on_cmd: [LuaTreeToggle, LuaTreeOpen]

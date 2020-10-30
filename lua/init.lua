@@ -3,6 +3,7 @@ local options = require "options"
 local mapping = require "mapping"
 local dein = require "dein"
 local autocmd = require "autocmd"
+local colors = require "colors"
 local vim = vim
 local M = {}
 
@@ -27,8 +28,7 @@ function M.loadInit()
   local d = dein:new()
   d:loadRepos()
   autocmd.loadAutocmds()
-  -- set theme
-  vim.api.nvim_command("colorscheme onedark")
+  colors.loadColorscheme()
   -- statusline
   require "statusline"
 end

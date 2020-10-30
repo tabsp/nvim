@@ -55,7 +55,7 @@ end
 function mapping:loadPluginDefine()
   self.plugin = {
     ["n|tt"] = mapCu("LuaTreeToggle"):withNoremap():withSilent(),
-    ["n|<LEADER>bp"] = mapCu("BufferPick"):withNoremap():withSilent(),
+    ["n|<LEADER>bp"] = mapCu("BufferLinePick"):withNoremap():withSilent(),
     ["n|<Leader>pr"] = mapCr("call dein#recache_runtimepath()"):withNoremap():withSilent(),
     ["i|<TAB>"] = mapCmd([[pumvisible() ? '<C-n>' : '<Tab>']]):withExpr():withSilent(),
     ["i|<S-TAB>"] = mapCmd([[pumvisible() ? '<C-p>' : '<S-Tab>']]):withNoremap():withExpr(),
@@ -65,8 +65,8 @@ function mapping:loadPluginDefine()
     ["n|gr"] = mapCmd("<cmd>lua vim.lsp.buf.references()<CR>"):withNoremap():withSilent(),
     ["n|gh"] = mapCmd("<cmd>lua vim.lsp.buf.hover()<CR>"):withNoremap():withSilent(),
     -- accelerated-jk
-    ["n|j"] = mapCmd('<Plug>(accelerated_jk_gj)'):withSilent(),
-    ["n|k"] = mapCmd('<Plug>(accelerated_jk_gk)'):withSilent(),
+    ["n|j"] = mapCmd("<Plug>(accelerated_jk_gj)"):withSilent(),
+    ["n|k"] = mapCmd("<Plug>(accelerated_jk_gk)"):withSilent()
   }
 end
 

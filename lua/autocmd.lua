@@ -17,7 +17,8 @@ function autocmd.loadAutocmds()
   local definitions = {
     bufs = {
       -- Reload vim config automatically
-      {"BufWritePost", [[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]]},
+      {"BufWritePost", [[$VIM_PATH/{*.vim} nested source $MYVIMRC | redraw]]},
+      {"BufWritePost", [[~/.config/nvim/modules/{*.yaml} nested call dein#recache_runtimepath()]]},
       -- Reload Vim script automatically if setlocal autoread
       {
         "BufWritePost,FileWritePost",
