@@ -6,9 +6,7 @@ local colors = {
 
 function colors.loadSyntax()
   local syntax = {
-    CursorLineNr = {fg = colors.yellow},
-    TabLineFill = {style = colors.none},
-    TabLineSel = {fg = colors.yellow}
+    CursorLineNr = {fg = colors.yellow}
   }
   return syntax
 end

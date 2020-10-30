@@ -14,7 +14,25 @@
           right_trunc_marker = '',
           separator_style = 'thin',
           mappings = true,
-          always_show_bufferline = true
+          always_show_bufferline = true,
+          numbers = "none",
+          number_style = "superscript",
+        },
+        highlights = {
+          bufferline_fill = {
+            guibg = "#1E2127",
+          },
+          bufferline_inactive = {
+            guibg = "#1E2127",
+          },
+          bufferline_selected = {
+            guifg = "#FF6666",
+            guibg = "#282C34"
+          },
+          bufferline_modified = {
+            guifg = "#FFFFFF",
+            guibg = "none"
+          },
         }
       }
     EOF
