@@ -24,15 +24,6 @@ local bufferNotEmpty = function()
   return false
 end
 
-gls.left[1] = {
-  FirstElement = {
-    provider = function()
-      return "▊ "
-    end,
-    highlight = {colors.blue, colors.linebg}
-  }
-}
-
 -- auto change color according the vim mode
 local modeColor = {
   n = colors.magenta,
@@ -55,6 +46,16 @@ local modeColor = {
   ["r?"] = colors.cyan,
   ["!"] = colors.red,
   t = colors.red
+}
+
+gls.left[1] = {
+  FirstElement = {
+    provider = function()
+      vim.api.nvim_command("hi GalaxyFirstElement guifg=" .. modeColor[vim.fn.mode()])
+      return "▊ "
+    end,
+    highlight = {colors.blue, colors.linebg}
+  }
 }
 
 gls.left[2] = {
