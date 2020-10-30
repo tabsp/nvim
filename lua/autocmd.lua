@@ -17,11 +17,6 @@ function autocmd.loadAutocmds()
   local definitions = {
     bufs = {
       {"BufWritePost", [[~/.config/nvim/modules/{*.yaml} nested call dein#recache_runtimepath()]]},
-      {
-        "BufReadPost",
-        "*",
-        [[nested if ! exists("g:leave_my_cursor_position_alone") | if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif | endif]]
-      },
       -- Auto format
       {"BufWritePre", "*.lua", "lua vim.api.nvim_command('Format')"}
     },

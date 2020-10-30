@@ -35,7 +35,8 @@ function options:loadEditorDefine()
     expandtab = false,
     autoindent = true,
     completeopt = "menuone,noinsert,noselect",
-    shortmess = "aoOTIcF"
+    shortmess = "aoOTIcF",
+    mouse = "nv"
   }
 end
 
@@ -65,6 +66,10 @@ function M.loadOptions()
   opts:loadWindowDefine()
   opts:loadBufferDefine()
   M.nvimLoadOptions(opts)
+  if global.isMac then
+    vim.g.python_host_prog = "~/.pyenv/versions/neovim2/bin/python"
+    vim.g.python3_host_prog = "~/.pyenv/versions/neovim3/bin/python"
+  end
 end
 
 return M

@@ -9,6 +9,24 @@ Lua 重构版
 ```shell
 cd ~/.config && git clone https://github.com/tabsp/nvim.git
 ```
+## pynvim
+
+```shell
+brew install pyenv
+brew install pyenv-virtualenv
+
+pyenv install 2.7.15
+pyenv virtualenv 2.7.15 neovim2
+pyenv activate neovim2
+pip install neovim
+pyenv deactivate
+
+pyenv install 3.7.9
+pyenv virtualenv 3.7.9 neovim3
+pyenv activate neovim3
+pip install neovim
+pyenv deactivate
+```
 
 ## Language server
 

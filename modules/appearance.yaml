@@ -8,11 +8,12 @@
     lua << EOF
       require'bufferline'.setup{
         options = {
+          view = "multiwindow",
           modified_icon = '●',
           buffer_close_icon = '',
           left_trunc_marker = '',
           right_trunc_marker = '',
-          separator_style = 'thin',
+          separator_style = '',
           mappings = true,
           always_show_bufferline = true,
           numbers = "none",
@@ -26,13 +27,27 @@
             guibg = "#1E2127",
           },
           bufferline_selected = {
-            guifg = "#FF6666",
-            guibg = "#282C34"
+            guifg = "#ABB2BF",
+            guibg = "#282C34",
+            gui = "bold,italic",
           },
-          bufferline_modified = {
-            guifg = "#FFFFFF",
+          bufferline_background = {
+            guibg = "#1E2127",
+            guifg = "#484E59"
+          },
+          bufferline_separator = {
+            guifg = "#000000",
+            guibg = "#1E2127"
+          },
+          bufferline_tab_selected_separator = {
+            guifg = "#000000",
+            guibg = "#1E2127"
+          },
+          bufferline_modified_selected = {
+            guifg = "#FFFF00",
             guibg = "none"
           },
+
         }
       }
     EOF
