@@ -16,20 +16,7 @@ end
 function autocmd.loadAutocmds()
   local definitions = {
     bufs = {
-      -- Reload vim config automatically
-      {"BufWritePost", [[$VIM_PATH/{*.vim} nested source $MYVIMRC | redraw]]},
       {"BufWritePost", [[~/.config/nvim/modules/{*.yaml} nested call dein#recache_runtimepath()]]},
-      -- Reload Vim script automatically if setlocal autoread
-      {
-        "BufWritePost,FileWritePost",
-        "*.vim",
-        [[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]]
-      },
-      {"BufWritePre", "/tmp/*", "setlocal noundofile"},
-      {"BufWritePre", "COMMIT_EDITMSG", "setlocal noundofile"},
-      {"BufWritePre", "MERGE_MSG", "setlocal noundofile"},
-      {"BufWritePre", "*.tmp", "setlocal noundofile"},
-      {"BufWritePre", "*.bak", "setlocal noundofile"},
       {
         "BufReadPost",
         "*",
@@ -63,10 +50,6 @@ function autocmd.loadAutocmds()
     yank = {
       {"TextYankPost", [[* silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=400})]]}
     }
-    -- gitblame = {
-    --   {"CursorHold","*","lua require'version'.blameVirtualText()"};
-    --   {"CursorMoved,CursorMovedI","*","lua require'version'.clearBlameVirtualText()"};
-    -- }
   }
 
   autocmd.nvimCreateAugroups(definitions)
