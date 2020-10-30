@@ -10,7 +10,21 @@ Lua 重构版
 cd ~/.config && git clone https://github.com/tabsp/nvim.git
 ```
 
-## 依赖
+## Language server
+
+### gopls
+
+```shell
+go get golang.org/x/tools/gopls@latest
+```
+
+### typescript-language-server
+
+```shell
+npm install -g typescript-language-server
+```
+
+## Formt Code
 
 ### lua-fmt
 
