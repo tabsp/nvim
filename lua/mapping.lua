@@ -68,7 +68,14 @@ function mapping:loadPluginDefine()
     ["n|j"] = mapCmd("<Plug>(accelerated_jk_gj)"):withSilent(),
     ["n|k"] = mapCmd("<Plug>(accelerated_jk_gk)"):withSilent(),
     -- thaerkh/vim-workspace
-    ["n|<LEADER>s"] = mapCu("ToggleWorkspace"):withNoremap()
+    ["n|<LEADER>s"] = mapCu("ToggleWorkspace"):withNoremap(),
+    -- nvim-lua/telescope.nvim
+    ["n|<LEADER>ff"] = mapCu("TelescopeFindFile"):withNoremap():withSilent(),
+    ["n|<LEADER>fg"] = mapCu("TelescopeFindGitFile"):withNoremap():withSilent(),
+    ["n|<LEADER>fb"] = mapCu("TelescopeBuffers"):withNoremap():withSilent(),
+    ["n|<LEADER>fs"] = mapCu("TelescopeLiveGrep"):withNoremap():withSilent(),
+    ["n|<LEADER>fh"] = mapCu("TelescopeHelpTags"):withNoremap():withSilent(),
+    ["n|<LEADER>ft"] = mapCu("TelescopeBuiltin"):withNoremap():withSilent()
   }
 end
 

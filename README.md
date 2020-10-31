@@ -51,3 +51,21 @@ npm install -g typescript-language-server
 ```shell
 npm install -g lua-fmt
 ```
+
+## Optional
+
+### bat
+
+[source](https://github.com/sharkdp/bat)
+
+```shell
+brew install bat
+```
+
+### ripgrep
+
+[source](https://github.com/BurntSushi/ripgrep)
+
+```shell
+brew install ripgrep
+```

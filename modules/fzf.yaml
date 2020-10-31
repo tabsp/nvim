@@ -1,0 +1,8 @@
+- repo: nvim-lua/telescope.nvim
+  on_cmd: [TelescopeFindFile, TelescopeLiveGrep, TelescopeOldFiles, TelescopeBuffers, TelescopeHelpTags]
+
+- repo: nvim-lua/popup.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-lua/plenary.nvim
+  on_source: telescope.nvim
