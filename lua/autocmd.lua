@@ -39,9 +39,6 @@ function autocmd.loadAutocmds()
       -- Check if file changed when its window is focus, more eager than 'autoread'
       {"FocusGained", "* checktime"}
     },
-    ft = {
-      {"FileType", "dashboard", "set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"}
-    },
     yank = {
       {"TextYankPost", [[* silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=400})]]}
     }

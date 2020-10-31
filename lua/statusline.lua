@@ -1,6 +1,6 @@
 local gl = require("galaxyline")
 local gls = gl.section
-gl.short_line_list = {"LuaTree"}
+gl.short_line_list = {"defx"}
 
 local colors = {
   bg = "#282c34",

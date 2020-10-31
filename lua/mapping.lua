@@ -54,7 +54,7 @@ end
 
 function mapping:loadPluginDefine()
   self.plugin = {
-    ["n|tt"] = mapCu("LuaTreeToggle"):withNoremap():withSilent(),
+    ["n|tt"] = mapCu("Defx"):withNoremap():withSilent(),
     ["n|<LEADER>bp"] = mapCu("BufferLinePick"):withNoremap():withSilent(),
     ["n|<Leader>pr"] = mapCr("call dein#recache_runtimepath()"):withNoremap():withSilent(),
     ["i|<TAB>"] = mapCmd([[pumvisible() ? '<C-n>' : '<Tab>']]):withExpr():withSilent(),

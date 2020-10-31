@@ -16,15 +16,15 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 pyenv install 2.7.15
-pyenv virtualenv 2.7.15 neovim2
-pyenv activate neovim2
-pip install neovim
+pyenv virtualenv 2.7.15 py2nvim
+pyenv activate py2nvim
+pip install pynvim
 pyenv deactivate
 
-pyenv install 3.7.9
-pyenv virtualenv 3.7.9 neovim3
-pyenv activate neovim3
-pip install neovim
+pyenv install 3.7.1
+pyenv virtualenv 3.7.1 py3nvim
+pyenv activate py3nvim
+pip install pynvim
 pyenv deactivate
 ```
 
