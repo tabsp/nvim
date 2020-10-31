@@ -44,7 +44,7 @@
             guibg = "#1E2127"
           },
           bufferline_modified_selected = {
-            guifg = "#ec5f67",
+            guifg = "#9AC27E",
             guibg = "none"
           },
 

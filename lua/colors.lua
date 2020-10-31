@@ -1,12 +1,14 @@
 local colors = {
   yellow = "#ffff00",
   blue = "#51afef",
+  linebg = "#383E4A",
   none = "NONE"
 }
 
 function colors.loadSyntax()
   local syntax = {
-    CursorLineNr = {fg = colors.yellow}
+    CursorLineNr = {fg = colors.yellow},
+    CursorLine = {bg = colors.linebg}
   }
   return syntax
 end
