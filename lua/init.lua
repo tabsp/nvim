@@ -9,7 +9,8 @@ local M = {}
 
 function M.createDir()
   local dataDir = {
-    global.cacheDir .. "undo"
+    global.cacheDir .. "undo",
+    global.cacheDir .. "sessions"
   }
   if not global.isDir(global.cacheDir) then
     os.execute("mkdir -p " .. global.cacheDir)

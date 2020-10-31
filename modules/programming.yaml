@@ -4,6 +4,7 @@
     let g:indentLine_char_list = ['|', '¦', '┆', '┊']
     let g:indentLine_concealcursor = 'niv'
     let g:indentLine_showFirstIndentLevel = 1
+    let g:indentLine_fileTypeExclude = ['defx']
 
 - repo: nvim-lua/completion-nvim
   on_event: [BufEnter]

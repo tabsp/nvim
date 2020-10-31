@@ -29,7 +29,7 @@ local modeColor = {
   n = colors.magenta,
   i = colors.green,
   v = colors.blue,
-  [""] = colors.blue,
+  ["<c-V>"] = colors.orange,
   V = colors.blue,
   c = colors.red,
   no = colors.magenta,
@@ -51,7 +51,9 @@ local modeColor = {
 gls.left[1] = {
   FirstElement = {
     provider = function()
-      vim.api.nvim_command("hi GalaxyFirstElement guifg=" .. modeColor[vim.fn.mode()])
+      -- TODO FIX
+      print(vim.fn.mode(), modeColor[vim.fn.mode()])
+      -- vim.api.nvim_command("hi GalaxyFirstElement guifg=" .. modeColor[vim.fn.mode()])
       return "▊ "
     end,
     highlight = {colors.blue, colors.linebg}
@@ -61,9 +63,11 @@ gls.left[1] = {
 gls.left[2] = {
   ViMode = {
     provider = function()
-      vim.api.nvim_command("hi GalaxyViMode guifg=" .. modeColor[vim.fn.mode()])
+      -- TODO FIX
+      -- vim.api.nvim_command("hi GalaxyViMode guifg=" .. modeColor[vim.fn.mode()])
       return " "
     end,
+    condition = bufferNotEmpty,
     highlight = {colors.darkblue, colors.linebg, "bold"}
   }
 }

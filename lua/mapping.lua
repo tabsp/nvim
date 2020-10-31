@@ -20,7 +20,7 @@ function mapping:loadVimDefine()
     -- buffer
     ["n|S"] = mapCu("write"):withNoremap(),
     ["n|Q"] = mapCu("quit"):withNoremap(),
-    ["n|<C-d>"] = mapCu("bdelete"):withNoremap(),
+    ["n|<C-d>"] = mapCu("Bdelete"):withNoremap(),
     ["n|<LEADER>="] = mapCu("bnext"):withNoremap(),
     ["n|<LEADER>-"] = mapCu("bprevious"):withNoremap(),
     -- cursor
@@ -66,7 +66,9 @@ function mapping:loadPluginDefine()
     ["n|gh"] = mapCmd("<cmd>lua vim.lsp.buf.hover()<CR>"):withNoremap():withSilent(),
     -- accelerated-jk
     ["n|j"] = mapCmd("<Plug>(accelerated_jk_gj)"):withSilent(),
-    ["n|k"] = mapCmd("<Plug>(accelerated_jk_gk)"):withSilent()
+    ["n|k"] = mapCmd("<Plug>(accelerated_jk_gk)"):withSilent(),
+    -- thaerkh/vim-workspace
+    ["n|<LEADER>s"] = mapCu("ToggleWorkspace"):withNoremap()
   }
 end
 
