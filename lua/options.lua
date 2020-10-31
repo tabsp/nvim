@@ -46,7 +46,8 @@ function options:loadWindowDefine()
     number = true,
     relativenumber = true,
     cursorline = true,
-    list = true
+    list = true,
+    numberwidth = 1
   }
 end
 

@@ -24,12 +24,10 @@ local bufferNotEmpty = function()
   return false
 end
 
--- auto change color according the vim mode
-local modeColor = {
+modeColors = {
   n = colors.magenta,
   i = colors.green,
   v = colors.blue,
-  ["<c-V>"] = colors.orange,
   V = colors.blue,
   c = colors.red,
   no = colors.magenta,
@@ -47,13 +45,18 @@ local modeColor = {
   ["!"] = colors.red,
   t = colors.red
 }
+local getModeColor = function(mode)
+  local color = modeColors[mode]
+  if (color == nil) then
+    color = colors.red
+  end
+  return color
+end
 
 gls.left[1] = {
   FirstElement = {
     provider = function()
-      -- TODO FIX
-      print(vim.fn.mode(), modeColor[vim.fn.mode()])
-      -- vim.api.nvim_command("hi GalaxyFirstElement guifg=" .. modeColor[vim.fn.mode()])
+      vim.api.nvim_command("hi GalaxyFirstElement guifg=" .. getModeColor(vim.fn.mode()))
       return "▊ "
     end,
     highlight = {colors.blue, colors.linebg}
@@ -63,8 +66,7 @@ gls.left[1] = {
 gls.left[2] = {
   ViMode = {
     provider = function()
-      -- TODO FIX
-      -- vim.api.nvim_command("hi GalaxyViMode guifg=" .. modeColor[vim.fn.mode()])
+      vim.api.nvim_command("hi GalaxyViMode guifg=" .. getModeColor(vim.fn.mode()))
       return " "
     end,
     condition = bufferNotEmpty,
