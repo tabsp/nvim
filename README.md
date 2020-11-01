@@ -1,20 +1,47 @@
 # My neovim setup
 
-Lua 重构版
+![snapshoot](snapshoot.jpg)
 
-## 使用方法
+## Requirements
 
-### clone
+[Neovim Nightly (0.5)](https://github.com/neovim/neovim/releases/tag/nightly)
+
+## Setup
+
+### Clone
 
 ```shell
 cd ~/.config && git clone https://github.com/tabsp/nvim.git
 ```
 ## pynvim
 
+### Install pyenv
+
+MacOS:
+
 ```shell
 brew install pyenv
 brew install pyenv-virtualenv
+```
 
+The automatic installer:
+
+```shell
+curl https://pyenv.run | bash
+```
+
+```shell
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+
+exec "$SHELL"
+```
+
+### Install pynvim
+
+```shell
 pyenv install 2.7.15
 pyenv virtualenv 2.7.15 py2nvim
 pyenv activate py2nvim
