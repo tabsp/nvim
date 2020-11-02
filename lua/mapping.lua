@@ -17,6 +17,8 @@ function mapping:loadVimDefine()
     ["n|R"] = mapCu("source $MYVIMRC"):withNoremap(),
     ["n|<LEADER><CR>"] = mapCr("nohls"):withNoremap(),
     ["i|jj"] = mapCmd("<ESC>"):withNoremap(),
+    ["x|<"] = mapCmd("<gv"):withNoremap(),
+    ["x|>"] = mapCmd(">gv"):withNoremap(),
     -- buffer
     ["n|S"] = mapCu("write"):withNoremap(),
     ["n|Q"] = mapCu("quit"):withNoremap(),
