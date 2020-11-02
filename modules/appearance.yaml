@@ -134,3 +134,31 @@
 
 - repo: kristijanhusak/defx-icons
 - repo: kristijanhusak/defx-git
+
+- repo: nvim-treesitter/nvim-treesitter
+  on_event: BufRead
+  hook_source: |
+    lua <<EOF
+    require'nvim-treesitter.configs'.setup {
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+        ensure_installed = {
+          'bash',
+          'c',
+          'cpp',
+          'css',
+          'go',
+          'html',
+          'java',
+          'javascript',
+          'json',
+          'lua',
+          'python',
+          'typescript',
+        }
+    }
+    EOF
