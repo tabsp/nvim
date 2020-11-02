@@ -70,12 +70,13 @@ function mapping:loadPluginDefine()
     -- thaerkh/vim-workspace
     ["n|<LEADER>s"] = mapCu("ToggleWorkspace"):withNoremap(),
     -- nvim-lua/telescope.nvim
-    ["n|<LEADER>ff"] = mapCu("TelescopeFindFile"):withNoremap():withSilent(),
-    ["n|<LEADER>fg"] = mapCu("TelescopeFindGitFile"):withNoremap():withSilent(),
-    ["n|<LEADER>fb"] = mapCu("TelescopeBuffers"):withNoremap():withSilent(),
-    ["n|<LEADER>fs"] = mapCu("TelescopeLiveGrep"):withNoremap():withSilent(),
-    ["n|<LEADER>fh"] = mapCu("TelescopeHelpTags"):withNoremap():withSilent(),
-    ["n|<LEADER>ft"] = mapCu("TelescopeBuiltin"):withNoremap():withSilent()
+    ["n|<LEADER>ff"] = mapCu("Telescope find_files"):withNoremap():withSilent(),
+    ["n|<LEADER>fg"] = mapCu("Telescope git_files"):withNoremap():withSilent(),
+    ["n|<LEADER>fb"] = mapCu("Telescope buffers show_all_buffers=true"):withNoremap():withSilent(),
+    ["n|<LEADER>fs"] = mapCu("Telescope live_grep"):withNoremap():withSilent(),
+    ["n|<LEADER>fh"] = mapCu("Telescope help_tags"):withNoremap():withSilent(),
+    ["n|<LEADER>fc"] = mapCu("Telescope commands"):withNoremap():withSilent(),
+    ["n|<LEADER>ft"] = mapCu("Telescope builtin"):withNoremap():withSilent()
   }
 end
 

@@ -17,6 +17,7 @@ function M.nvimLoadOptions(options)
     end
   end
 end
+
 -- editor options
 function options:loadEditorDefine()
   self.o = {
@@ -62,7 +63,7 @@ function options:loadBufferDefine()
 end
 
 function M.loadOptions()
-  local opts = options:new()
+  opts = options:new()
   opts:loadEditorDefine()
   opts:loadWindowDefine()
   opts:loadBufferDefine()
