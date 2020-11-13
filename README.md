@@ -96,3 +96,12 @@ brew install bat
 ```shell
 brew install ripgrep
 ```
+
+### Clipboard
+
+#### Arch
+
+```shell
+pacman -S xsel
+```
+
