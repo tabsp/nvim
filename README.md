@@ -17,7 +17,7 @@ cd ~/.config && git clone https://github.com/tabsp/nvim.git
 
 ### Install pyenv
 
-MacOS:
+macOS:
 
 ```shell
 brew install pyenv
@@ -96,3 +96,12 @@ brew install bat
 ```shell
 brew install ripgrep
 ```
+
+### Clipboard
+
+#### Arch
+
+```shell
+pacman -S xsel
+```
+
