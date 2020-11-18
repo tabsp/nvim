@@ -15,44 +15,16 @@ cd ~/.config && git clone https://github.com/tabsp/nvim.git
 ```
 ## pynvim
 
-### Install pyenv
-
-macOS:
+require Pythen3
 
 ```shell
-brew install pyenv
-brew install pyenv-virtualenv
-```
-
-The automatic installer:
-
-```shell
-curl https://pyenv.run | bash
-```
-
-```shell
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
-
-exec "$SHELL"
-```
-
-### Install pynvim
-
-```shell
-pyenv install 2.7.15
-pyenv virtualenv 2.7.15 py2nvim
-pyenv activate py2nvim
 pip install pynvim
-pyenv deactivate
+```
 
-pyenv install 3.7.1
-pyenv virtualenv 3.7.1 py3nvim
-pyenv activate py3nvim
-pip install pynvim
-pyenv deactivate
+for linux:
+
+```shell
+pip install pyyaml
 ```
 
 ## Language server
