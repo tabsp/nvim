@@ -28,8 +28,8 @@
 - repo: neovim/nvim-lspconfig
   hook_add: |
     lua << EOF
-      nvim_lsp = require "nvim_lsp"
-      nvim_lsp.gopls.setup{}
+      lspconfig = require "lspconfig"
+      lspconfig.gopls.setup{}
     EOF
 
 - repo: steelsojka/completion-buffers
