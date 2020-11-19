@@ -78,7 +78,9 @@ function mapping:loadPluginDefine()
     ["n|<LEADER>fs"] = mapCu("Telescope live_grep"):withNoremap():withSilent(),
     ["n|<LEADER>fh"] = mapCu("Telescope help_tags"):withNoremap():withSilent(),
     ["n|<LEADER>fc"] = mapCu("Telescope commands"):withNoremap():withSilent(),
-    ["n|<LEADER>ft"] = mapCu("Telescope builtin"):withNoremap():withSilent()
+    ["n|<LEADER>ft"] = mapCu("Telescope builtin"):withNoremap():withSilent(),
+    -- Lazygit
+    ["n|<LEADER>lg"] = mapCu("tabe<CR>:-tabmove<CR>:term lazygit"):withNoremap():withSilent()
   }
 end
 
