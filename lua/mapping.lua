@@ -75,6 +75,7 @@ function mapping:loadPluginDefine()
     ["n|<LEADER>ff"] = mapCu("Telescope find_files"):withNoremap():withSilent(),
     ["n|<LEADER>fg"] = mapCu("Telescope git_files"):withNoremap():withSilent(),
     ["n|<LEADER>fb"] = mapCu("Telescope buffers show_all_buffers=true"):withNoremap():withSilent(),
+    ["n|<LEADER>bb"] = mapCu("Telescope buffers show_all_buffers=true"):withNoremap():withSilent(),
     ["n|<LEADER>fs"] = mapCu("Telescope live_grep"):withNoremap():withSilent(),
     ["n|<LEADER>fh"] = mapCu("Telescope help_tags"):withNoremap():withSilent(),
     ["n|<LEADER>fc"] = mapCu("Telescope commands"):withNoremap():withSilent(),
