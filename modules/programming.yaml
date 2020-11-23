@@ -33,14 +33,19 @@
       lspconfig.gopls.setup{
         cmd = {"gopls","--remote=auto"};
         filetypes = {"go", "gomod"};
-        root_patterns = {'go.mod','.git'};
-          init_options = {
-            usePlaceholders=true;
-            completeUnimported=true;
-          };
+        root_dir = lspconfig.util.root_pattern("go.mod", ".git");
+        init_options = {
+          usePlaceholders=true;
+          completeUnimported=true;
+        };
       }
       lspconfig.sumneko_lua.setup{
         cmd = {home .. "/.local/share/nvim/lua-language-server/bin/macOS/lua-language-server", "-E", home .. "/.local/share/nvim/lua-language-server/main.lua"};
+      }
+      lspconfig.tsserver.setup{
+        cmd = { "typescript-language-server", "--stdio" };
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" };
+        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git");
       }
     EOF
 
@@ -58,6 +63,7 @@
 - repo: jiangmiao/auto-pairs
 
 - repo: mhartington/formatter.nvim
+  on_fg: [lua]
   hook_add: |
     lua << EOF
       require('format').setup{
@@ -95,3 +101,14 @@
     endfunction
     autocmd FileType * call InitCaw()
     call InitCaw()
+
+- repo: ludovicchabant/vim-gutentags
+  if: executable('ctags')
+  on_event: [BufReadPost, BufWritePost]
+  hook_source: |
+    let g:gutentags_cache_dir = getenv("HOME") . "/.cache/vim/tags"
+    let g:gutentags_project_root = [".root", ".git", ".project", "go.mod"]
+    let g:gutentags_generate_on_write = 1
+    let g:gutentags_generate_on_missing = 1
+    let g:gutentags_generate_on_new = 1
+    let g:gutentags_exclude_filetypes = [ "defx"]

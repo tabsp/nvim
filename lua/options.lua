@@ -48,7 +48,8 @@ function options:loadWindowDefine()
     relativenumber = true,
     cursorline = true,
     list = true,
-    numberwidth = 1
+    numberwidth = 1,
+    foldmethod = "indent"
   }
 end
 
