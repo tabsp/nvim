@@ -19,7 +19,8 @@ function autocmd.loadAutocmds()
       {"BufWritePost", [[~/.config/nvim/modules/{*.yaml} nested call dein#recache_runtimepath()]]},
       {"BufWinEnter", "*", "silent! :%foldopen!"},
       -- Auto format
-      {"BufWritePre", "*.lua", "lua vim.api.nvim_command('Format')"}
+      {"BufWritePre", "*.lua", "lua vim.api.nvim_command('Format')"},
+      {"BufWritePre", "*.go", "lua vim.api.nvim_command('Format')"}
     },
     wins = {
       -- Highlight current line only on focused window

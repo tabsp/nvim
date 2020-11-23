@@ -63,7 +63,7 @@
 - repo: jiangmiao/auto-pairs
 
 - repo: mhartington/formatter.nvim
-  on_fg: [lua]
+  on_fg: [lua, go]
   hook_add: |
     lua << EOF
       require('format').setup{
@@ -72,6 +72,15 @@
             return {
               exe = "luafmt",
               args = {"--indent-count", 2, "--stdin"},
+              stdin = true
+            }
+          end
+        },
+        go = {
+          gofmt = function()
+            return {
+              exe = "gofmt",
+              args = {""},
               stdin = true
             }
           end
