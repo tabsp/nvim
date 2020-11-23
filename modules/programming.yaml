@@ -29,7 +29,19 @@
   hook_add: |
     lua << EOF
       lspconfig = require "lspconfig"
-      lspconfig.gopls.setup{}
+      home = os.getenv("HOME")
+      lspconfig.gopls.setup{
+        cmd = {"gopls","--remote=auto"};
+        filetypes = {"go", "gomod"};
+        root_patterns = {'go.mod','.git'};
+          init_options = {
+            usePlaceholders=true;
+            completeUnimported=true;
+          };
+      }
+      lspconfig.sumneko_lua.setup{
+        cmd = {home .. "/.local/share/nvim/lua-language-server/bin/macOS/lua-language-server", "-E", home .. "/.local/share/nvim/lua-language-server/main.lua"};
+      }
     EOF
 
 - repo: steelsojka/completion-buffers
