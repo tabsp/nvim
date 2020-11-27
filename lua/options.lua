@@ -70,8 +70,8 @@ function M.loadOptions()
   opts:loadBufferDefine()
   M.nvimLoadOptions(opts)
   if global.isMac then
-    vim.g.python_host_prog = "~/.pyenv/versions/py2nvim/bin/python"
-    vim.g.python3_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
+    vim.g.python_host_prog = "/usr/bin/python"
+    vim.g.python3_host_prog = "/usr/local/bin/python3"
   end
 end
 
